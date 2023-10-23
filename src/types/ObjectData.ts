@@ -1,7 +1,7 @@
 import { Accession } from './Accession';
 import { Image } from './Image';
 
-export type Object = {
+export type ObjectData = {
   id: number;
   isHighlight: boolean;
   accession: Accession;

@@ -1,3 +1,5 @@
+import { ObjectData } from '../types/ObjectData';
+
 export interface RequsetObject {
-  id: number;
+  object: ObjectData;
 }
