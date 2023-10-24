@@ -1,6 +1,7 @@
 // metmuseum.github.io
 import { DepartmentsResponse } from './interfaces/DepartmentsResponse';
 import { Result } from './interfaces/Result';
+import { SearchRequest } from './interfaces/SearchRequest';
 
 export class Met {
   private baseUrl = 'https://collectionapi.metmuseum.org/public/collection/v1/';
@@ -35,7 +36,17 @@ export class Met {
     }
   }
 
+  // get departments list
   public async getDepartments() {
-    return await this.fetchData<DepartmentsResponse>('departments');
+    const res = await this.fetchData<DepartmentsResponse>('departments');
+    return res;
+  }
+
+  public async search({ searchTerm }: SearchRequest) {
+    let url = `/search?q=${searchTerm}`;
+
+    const res = await this.fetchData<SearchResponse>(url);
+
+    return res;
   }
 }
