@@ -14,8 +14,6 @@ describe('Search', () => {
       artistOrCulture: true,
     });
 
-    console.log(res);
-
     expect(res.success).toBeTruthy();
     expect(res.status).toBe(200);
     expect(res.data?.length).toBe(perPage);
