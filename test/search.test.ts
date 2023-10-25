@@ -12,7 +12,5 @@ describe('Search', () => {
     expect(res.status).toBe(200);
     // expect(res.data?.departments.length).greaterThan(0);
     expect(res.error).toBeUndefined();
-
-    console.log(res);
   });
 });
