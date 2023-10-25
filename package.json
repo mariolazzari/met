@@ -30,7 +30,7 @@
     "singleQuote": true,
     "trailingComma": "es5"
   },
-  "name": "met",
+  "name": "@mariolazzari/met",
   "author": "Mario Lazzari",
   "module": "dist/met.esm.js",
   "size-limit": [
