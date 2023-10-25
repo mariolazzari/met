@@ -1,4 +1,4 @@
 export interface ObjectsResponse {
   total: number;
-  ids: number[];
+  objectIDs: number[];
 }

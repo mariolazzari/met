@@ -2,6 +2,7 @@
 import { DepartmentsResponse } from './interfaces/DepartmentsResponse';
 import { Result } from './interfaces/Result';
 import { SearchRequest } from './interfaces/SearchRequest';
+import { SearchResponse } from './interfaces/SearchRsponse';
 import { ObjectData } from './types/ObjectData';
 
 export class Met {
@@ -40,7 +41,16 @@ export class Met {
 
   // fecth object data
   private async getObjects(ids: number[] = []) {
-    // todo: promise all
+    const promises = ids.map(id => this.getObject(id));
+    const res = await Promise.all(promises);
+    const objects: ObjectData[] = [];
+    res.forEach(r => {
+      if (r.data) {
+        objects.push(r.data);
+      }
+    });
+
+    return objects;
   }
 
   // get departments list
@@ -58,13 +68,22 @@ export class Met {
   // search term
   public async search({ searchTerm, page = 1, perPage = 10 }: SearchRequest) {
     let url = `/search?q=${searchTerm}`;
+    let resObjects: Result<ObjectData[]> = {
+      success: true,
+      status: 200,
+      data: [],
+    };
 
-    const res = await this.fetchData<SearchResponse>(url);
-    if (res.success && res.data) {
-      // const ids:numer[] = res.data.slice()
-      // const objects = await this.getObjects(res.data.objectIds);
+    const resIDs = await this.fetchData<SearchResponse>(url);
+    if (resIDs.success && resIDs.data) {
+      const ids: number[] = resIDs.data.objectIDs.slice(
+        (page - 1) * perPage,
+        page * perPage
+      );
+
+      resObjects.data = await this.getObjects(ids);
     }
 
-    return res;
+    return resObjects;
   }
 }

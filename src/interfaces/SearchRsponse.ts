@@ -1,4 +1,4 @@
-interface SearchResponse {
+export interface SearchResponse {
   total: number;
-  objectIds: number[];
+  objectIDs: number[];
 }
