@@ -2,10 +2,12 @@
 import { DepartmentsResponse } from './interfaces/DepartmentsResponse';
 import { Result } from './interfaces/Result';
 import { SearchRequest } from './interfaces/SearchRequest';
+import { ObjectData } from './types/ObjectData';
 
 export class Met {
   private baseUrl = 'https://collectionapi.metmuseum.org/public/collection/v1/';
 
+  // fetch data from api
   private async fetchData<T>(url: string) {
     let result: Result<T> = {
       success: false,
@@ -36,16 +38,32 @@ export class Met {
     }
   }
 
+  // fecth object data
+  private async getObjects(ids: number[] = []) {
+    // todo: promise all
+  }
+
   // get departments list
   public async getDepartments() {
     const res = await this.fetchData<DepartmentsResponse>('departments');
     return res;
   }
 
-  public async search({ searchTerm }: SearchRequest) {
+  // get object details
+  public async getObject(id: number) {
+    const res = await this.fetchData<ObjectData>(`objects/${id}`);
+    return res;
+  }
+
+  // search term
+  public async search({ searchTerm, page = 1, perPage = 10 }: SearchRequest) {
     let url = `/search?q=${searchTerm}`;
 
     const res = await this.fetchData<SearchResponse>(url);
+    if (res.success && res.data) {
+      // const ids:numer[] = res.data.slice()
+      // const objects = await this.getObjects(res.data.objectIds);
+    }
 
     return res;
   }

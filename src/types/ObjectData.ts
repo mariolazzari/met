@@ -2,7 +2,7 @@ import { Accession } from './Accession';
 import { Image } from './Image';
 
 export type ObjectData = {
-  id: number;
+  objectID: number;
   isHighlight: boolean;
   accession: Accession;
   isPublicDomain: boolean;
