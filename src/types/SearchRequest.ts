@@ -1,4 +1,4 @@
-export interface SearchRequest {
+export type SearchRequest = {
   searchTerm: string;
   page?: number;
   perPage?: number;
@@ -13,4 +13,4 @@ export interface SearchRequest {
   geoLocation?: string;
   dateBegin?: number;
   dateEnd?: number;
-}
+};

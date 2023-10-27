@@ -1,9 +1,9 @@
 // metmuseum.github.io
-import { DepartmentsResponse } from './interfaces/DepartmentsResponse';
-import { Result } from './interfaces/Result';
-import { SearchRequest } from './interfaces/SearchRequest';
-import { SearchResponse } from './interfaces/SearchRsponse';
+import { DepartmentsResponse } from './types/DepartmentsResponse';
+import { Result } from './types/Result';
+import { SearchRequest } from './types/SearchRequest';
 import { ObjectData } from './types/ObjectData';
+import { ObjectsResponse } from './types/ObjectsResponse';
 
 export class Met {
   private baseUrl = 'https://collectionapi.metmuseum.org/public/collection/v1/';
@@ -74,7 +74,7 @@ export class Met {
       data: [],
     };
 
-    const resIDs = await this.fetchData<SearchResponse>(url);
+    const resIDs = await this.fetchData<ObjectsResponse>(url);
     if (resIDs.success && resIDs.data) {
       const ids: number[] = resIDs.data.objectIDs.slice(
         (page - 1) * perPage,
