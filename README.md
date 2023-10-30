@@ -65,3 +65,14 @@ This task will create a distribution version of the project inside your local *d
 
 
 ## Met class
+
+## Authors
+
+* **Mario Lazzari** - *Initial work*
+
+## Links
+
+* Demo [app](https://www.mariolazzari.it/hobbies/art/met)
+* My personal [site](https://mariolazzari.it)
+* My [github](https://github.com/mariolazzari) profile
+* Metropolitan Museum of Art APIs [documentation](https://metmuseum.github.io/)
