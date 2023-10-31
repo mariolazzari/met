@@ -1,5 +1,5 @@
 {
-  "version": "0.0.5",
+  "version": "0.0.6",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -51,5 +51,17 @@
     "tslib": "^2.6.2",
     "typescript": "^5.2.2",
     "vitest": "^0.34.6"
-  }
+  },
+  "keywords": [
+    "met",
+    "museum",
+    "metropolitan",
+    "new york",
+    "art",
+    "nodejs",
+    "typescript",
+    "vitest",
+    "tsdx",
+    "rest"
+  ]
 }
