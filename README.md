@@ -66,6 +66,27 @@ This task will create a distribution version of the project inside your local *d
 
 ## Met class
 
+Met **class** content handles all the requests and the responses to the Metropolitan museum of Art public REST APIs.
+
+### Constructor
+
+In order to initialize Met client:
+
+```js
+const met = new Met()
+```
+
+### Methods
+
+Met client includes the following public methods:
+
+### getDepartments
+
+### getObject
+
+### search
+
+
 ## Authors
 
 * **Mario Lazzari** - *Initial work*
