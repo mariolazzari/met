@@ -66,7 +66,7 @@ This task will create a distribution version of the project inside your local *d
 
 ## Met class
 
-Met **class** content handles all the requests and the responses to the Metropolitan museum of Art public REST APIs.
+Met *class* content handles all the requests and the responses to the Metropolitan museum of Art public REST APIs.
 
 ### Constructor
 
