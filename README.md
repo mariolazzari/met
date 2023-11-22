@@ -80,12 +80,11 @@ const met = new Met()
 
 Met client includes the following public methods:
 
-### getDepartments
+#### getDepartments
 
-### getObject
+#### getObject
 
-### search
-
+#### search
 
 ## Authors
 
