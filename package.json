@@ -1,5 +1,5 @@
 {
-  "version": "0.0.6",
+  "version": "0.0.7",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -17,7 +17,8 @@
     "lint": "tsdx lint",
     "prepare": "tsdx build",
     "size": "size-limit",
-    "analyze": "size-limit --why"
+    "analyze": "size-limit --why",
+    "coverage": "vitest run --coverage"
   },
   "husky": {
     "hooks": {
@@ -45,12 +46,13 @@
   ],
   "devDependencies": {
     "@size-limit/preset-small-lib": "^11.0.0",
+    "@vitest/coverage-v8": "^1.0.1",
     "husky": "^8.0.3",
     "size-limit": "^11.0.0",
-    "tsdx": "^0.14.1",
+    "tsdx": "^0.13.3",
     "tslib": "^2.6.2",
     "typescript": "^5.3.2",
-    "vitest": "^0.34.6"
+    "vitest": "^1.0.1"
   },
   "keywords": [
     "met",
