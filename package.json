@@ -46,12 +46,12 @@
   ],
   "devDependencies": {
     "@size-limit/preset-small-lib": "^11.1.4",
-    "@vitest/coverage-v8": "^1.6.0",
+    "@vitest/coverage-v8": "^2.0.2",
     "size-limit": "^11.1.4",
     "tsdx": "^0.14.1",
     "tslib": "^2.6.3",
     "typescript": "^5.5.3",
-    "vitest": "^1.6.0"
+    "vitest": "^2.0.2"
   },
   "keywords": [
     "met",
