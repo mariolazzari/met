@@ -32,7 +32,7 @@ $ cd met
 To install and set up the library, run:
 
 ```sh
-$ npm install @mariolazzari/met
+$ pnpm add @mariolazzari/met
 ```
 
 ## Usage
@@ -46,19 +46,19 @@ import { Met } from "@mariolazzari/met"
 **Watch mode**
 
 ```sh
-npm test
+pnpm test
 ```
 
 **Unit testing**
 
 ```sh
-npm test
+pnpm test
 ```
 
 **Bulding new version**
 
 ```sh
-npm build
+pnpm build
 ```
 
 This task will create a distribution version of the project inside your local *dist/* folder
@@ -76,11 +76,37 @@ In order to initialize Met client:
 const met = new Met()
 ```
 
+### Types
+
+#### Resukt<T>
+
+Discriminated union containing api calls: you can test success in order to get both value or error message.
+
+```ts
+type Result<T> =
+  | {
+      success: true;
+      data: T;
+    }
+  | {
+      success: false;
+      error: string;
+    };
+```
+
 ### Methods
 
 Met client includes the following public methods:
 
 #### getDepartments
+
+Get full departments list.
+
+```ts
+ public async getDepartments(): Promise<Result<DepartmentsResponse>> {
+    return await this.fetchData<DepartmentsResponse>('departments');
+  }
+```
 
 #### getObject
 

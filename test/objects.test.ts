@@ -7,8 +7,10 @@ describe('Objects', () => {
     const res = await met.getObject(id);
 
     expect(res.success).toBeTruthy();
-    expect(res.status).toBe(200);
-    expect(res.data?.objectID).toBe(id);
-    expect(res.error).toBeUndefined();
+    if (res.success) {
+      expect(res.data?.objectID).toBe(id);
+    } else {
+      expect(res.error).toBeDefined();
+    }
   });
 });

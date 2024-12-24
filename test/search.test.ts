@@ -15,8 +15,10 @@ describe('Search', () => {
     });
 
     expect(res.success).toBeTruthy();
-    expect(res.status).toBe(200);
-    expect(res.data?.length).toBe(perPage);
-    expect(res.error).toBeUndefined();
+    if (res.success) {
+      expect(res.data?.length).toBe(perPage);
+    } else {
+      expect(res.error).toBeUndefined();
+    }
   });
 });
