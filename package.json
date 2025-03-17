@@ -3,6 +3,7 @@
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
+  "type": "module",
   "files": [
     "dist",
     "src"
@@ -45,13 +46,13 @@
     }
   ],
   "devDependencies": {
-    "@size-limit/preset-small-lib": "^11.1.6",
-    "@vitest/coverage-v8": "^2.1.8",
-    "size-limit": "^11.1.6",
+    "@size-limit/preset-small-lib": "^11.2.0",
+    "@vitest/coverage-v8": "^3.0.9",
+    "size-limit": "^11.2.0",
     "tsdx": "^0.14.1",
     "tslib": "^2.8.1",
-    "typescript": "^5.7.2",
-    "vitest": "^2.1.8"
+    "typescript": "^5.8.2",
+    "vitest": "^3.0.9"
   },
   "keywords": [
     "met",
@@ -64,5 +65,8 @@
     "vitest",
     "tsdx",
     "rest"
-  ]
+  ],
+  "dependencies": {
+    "coverage-v8#latest": "link:@vitest/coverage-v8#latest"
+  }
 }
